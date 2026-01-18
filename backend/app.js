@@ -38,7 +38,4 @@ app.get("/api/weather", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-
-app.listen(3000, () => {
-  console.log("Server running at 3000");
-});
+export default app;
