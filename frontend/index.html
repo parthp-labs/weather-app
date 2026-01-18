@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A Weather App made using HTML, CSS and Javascript. You can get the current weather as well as the forecast of your desired location" />
+    <meta name="author" content="ParthPatel"/>
+    <meta name="keywords" content="HTML, CSS, JavaScript, Weather App">
+
+    <title>Weather App - Created By Parth Patel</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/f599d12d5a.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Backdrop -->
+    <div id="backdrop">
+      <div>
+        <img src="./assets/loader.gif" />
+
+        <div class="text-container">
+          <h3 id="backdrop-msg-text">Getting Weather & Forecast for</h3>
+
+          <h3>Please have patience</h3>
+        </div>
+      </div>
+    </div>
+
+    <nav class="header">
+      <h3 class="nav-app-name"><i class="fa-solid fa-cloud"></i>Weather App</h3>
+    </nav>
+
+    <div class="wrapper">
+      <div class="sidebar">
+        <div class="current-details">
+          <div class="date-time">
+            <h1 id="current-time"></h1>
+            <h5 id="current-date"></h5>
+          </div>
+          <div class="user-location">
+            <i class="fa-solid fa-location-dot"></i>
+            <h5 class="location"></h5>
+          </div>
+        </div>
+        <div class="current-temperature-details">
+          <div class="temperature-icon" id="current-temperature-icon"></div>
+
+          <div class="present-details">
+            <div class="temperature">
+              <h1 class="temp-value" id="current-temperature">0</h1>
+              <span class="temp-unit">°C</span>
+            </div>
+            <div class="separator"></div>
+            <div class="weather-data condition">
+              <i class="fa-solid fa-cloud"></i>
+              <p id="current-condition">Overcast</p>
+            </div>
+            <div class="weather-data precipitation">
+              <i class="fas fa-tint"></i>
+              <p>Precipitation -</p>
+              <p id="current-precip">0 %</p>
+            </div>
+            <div class="weather-data wind-speed">
+              <i class="fa-solid fa-wind"></i>
+              <p>Wind Speed -</p>
+              <p id="current-wind-speed">0 km/hr</p>
+            </div>
+            <div class="weather-data humidity">
+              <i class="fa-solid fa-water"></i>
+              <p>Humidity -</p>
+              <p id="current-humidity">0</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="search">
+          <form id="search-form">
+            <input id="search-field" placeholder="Search" />
+            <div>
+              <button id="search-btn" type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>Search
+              </button>
+              <button id="user-loc-weather-btn" type="button">
+                <i class="fa-solid fa-house"></i>My Place
+              </button>
+            </div>
+          </form>
+        </div>
+        <nav>
+          <ul id="options">
+            <button class="period-toggle active" id="hourly">Today</button>
+            <button class="period-toggle" id="weekly">Week</button>
+          </ul>
+          <ul id="units-options">
+            <button class="unit-toggle active" id="celsius-unit">°C</button>
+            <button class="unit-toggle" id="fahrenheit-unit">°F</button>
+          </ul>
+        </nav>
+
+        <div class="cards-container" id="weather-cards"></div>
+
+        <div class="highlights">
+          <h3>Today's Highlights For <span class="location"></span></h3>
+
+          <div class="highlights-data">
+            <div class="highlights-card">
+              <h4 class="highlight-name">Max Temperature</h4>
+              <h2 class="highlight-value" id="max-temperature"><span class="temp-unit">°C</span></h2>
+              <h6 class="highlight-status"></h6>
+            </div>
+            <div class="highlights-card">
+              <h4 class="highlight-name">Min. Temperature</h4>
+              <h2 class="highlight-value" id="min-temperature"><span class="temp-unit">°C</span></h2>
+              <h6 class="highlight-status"></h6>
+            </div>
+            
+            <div class="highlights-card">
+              <h4 class="highlight-name">UV Index</h4>
+              <h2 class="highlight-value" id="uv-index"></h2>
+              <h6 class="highlight-status" id="uv-index-status"></h6>
+            </div>
+            
+            <div class="highlights-card">
+              <h4 class="highlight-name">Air Quality</h4>
+              <h2 class="highlight-value" id="air-quality">0.2 </h2>
+              <h6 class="highlight-status" id="air-quality-status"></h6>
+            </div>
+
+            <div class="highlights-card">
+              <h4 class="highlight-name">Sunrise & Sunset</h4>
+              <h2 class="highlight-value"><span id="sunrise"></span> <br><span id="sunset"></span> </h2>
+              <h6 class="highlight-status"></h6>
+            </div>
+            <div class="highlights-card">
+              <h4 class="highlight-name">Feels Like</h4>
+              <h2 class="highlight-value" id="feels-like"></h2>
+              <h6 class="highlight-status"></h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="credits">
+      <h4 class="credits-text">Created by <a href="#">CoderParthPatel</a></h4>
+      <div class="accounts">
+        <a href="#"><i class="fa-brands fa-linkedin"></i></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-discord"></i></a>
+      </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="./script.js"></script>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+  </body>
+</html>
