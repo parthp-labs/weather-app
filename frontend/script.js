@@ -199,14 +199,10 @@ function updateWeather(weatherData) {
 
   // Adding the weather icon based on conditions
   const weatherIcon = getWeatherIcon(weatherData.currentConditions.icon);
-  currentTemperatureIcon.innerHTML = `<dotlottie-player
+  currentTemperatureIcon.innerHTML = `<img
                                           src="${weatherIcon}"
-                                          background="transparent"
-                                          speed="0.4"
-                                          style="width: 200px; height: 200px"
-                                          loop
-                                          autoplay
-                                        ></dotlottie-player>`;
+                                          style="width: 150px; height: 150px"
+                                        ></img>`;
 }
 
 // Function for converting time into 12 hour format
@@ -291,20 +287,17 @@ function getWeatherIcon(condition) {
   // Checking for the weather condition
   condition = condition && condition.toLowerCase();
   if (condition == "overcast") {
-    src =
-      "https://lottie.host/3cb3992b-fcfd-417d-8ef6-4d8fb05ab7df/eTxzsJSzn3.json";
+    src = "./assets/overcast.gif";
   } else if (condition == "rain") {
-    src =
-      "https://lottie.host/54a95fd3-fd1e-4aa7-a0cd-e92a867d2fcb/Yq69f04NAC.json";
+    src = "./assets/rain.gif";
   } else if (condition == "partly-cloudy-day" || condition == "cloudy") {
-    src =
-      "https://lottie.host/ebbabe61-4b10-4add-874c-2d51078c63a2/ylHTCiyrll.json";
+    src = "./assets/cloudy.gif";
   } else if (condition == "clear-day") {
-    src =
-      "https://lottie.host/f7218870-bb26-4f8f-9466-a3f72df34d1c/Gw1AvREBR1.json";
+    src = "./assets/sunny.gif";
   } else if (condition == "clear-night" || condition == "partly-cloudy-night") {
-    src =
-      "https://lottie.host/580a5b3e-3a14-4a5b-a247-35066b7bd76a/XiNzC1YQgb.json";
+    src = "./assets/night.gif";
+  } else if (condition == "fog") {
+    src = "./assets/cloudy.gif";
   }
 
   return src;
@@ -355,14 +348,10 @@ function populateWeatherCards(weatherData) {
     card.innerHTML = ` 
           <h4 class="day">${timeTag}</h4>
           <div class="weather-icon">
-          <dotlottie-player
+          <img
           src="${icon}"
-          background="transparent"
-          speed="0.4"
-          style="width: inherit; height: inherit"
-          loop
-          autoplay
-        ></dotlottie-player>
+          style="height:100%;width:100% "
+        ></img>
           </div>
           <div class="weather-card-temp">
             <h4 class="temp-value">${temperature}</h4>

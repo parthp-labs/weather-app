@@ -40,7 +40,6 @@ i {
   align-items: center;
   background-color: #81818481;
   padding: 5px 20px;
-  
 }
 .credits-text {
   padding: 0px 50px;
@@ -123,8 +122,9 @@ i {
   font-size: 50px;
 }
 #current-temperature-icon {
- width: 200px;
- height: 200px;
+  width: 150px;
+  height: 150px;
+  padding: 10px 0px;
 }
 .temperature .temp-unit {
   font-size: 25px;
@@ -199,6 +199,7 @@ form i {
 
 .present-details {
   height: 100%;
+  width: 100%;
 }
 
 .unit-toggle {
@@ -275,7 +276,7 @@ form i {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px
+  gap: 12px;
 }
 .highlights-card {
   padding: 14px;
@@ -291,7 +292,6 @@ form i {
   text-align: left;
   color: #737272a9;
   font-weight: 800;
-
 }
 .highlight-value {
   text-align: center;
@@ -299,7 +299,6 @@ form i {
 }
 .highlight-status {
 }
-
 
 #backdrop h3 {
   color: #ffffff;
@@ -327,7 +326,6 @@ form i {
     display: inline;
     margin-left: 2px;
   }
-
 }
 
 @media screen and (max-width: 850px) {
@@ -413,7 +411,7 @@ form i {
   }
 
   .highlights-data {
-    gap: 4px
+    gap: 4px;
   }
   .highlight-name {
     font-size: 12px;
@@ -431,7 +429,7 @@ form i {
 }
 
 @media screen and (max-width: 360px) {
-  .period-toggle{
+  .period-toggle {
     font-size: 10px;
   }
   .unit-toggle {
@@ -449,11 +447,10 @@ form i {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    gap: 4px
+    gap: 4px;
   }
   nav ul {
     display: flex;
-    
   }
 
   .highlights-data {
