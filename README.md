@@ -1,3 +1,5 @@
+> **Note:** Site is down due to error. Will be resolved soon
+
 # Weather App 🌤️
 
 A lightweight, responsive **Weather Application** built using **vanilla JavaScript** with a small **Express backend** to securely handle API requests.  
